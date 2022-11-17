@@ -1,0 +1,8 @@
+---
+  services:
+  - service_name: next-app
+    image_name: next-app
+    container_name: next-app
+    port_host: 8456
+    port_container: 3000
+    network_name: next-app_net

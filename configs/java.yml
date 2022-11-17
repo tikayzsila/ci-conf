@@ -1,0 +1,13 @@
+---
+  services:
+  - service_name: java-app
+    image_name: java-app
+    container_name: java-app
+    pg_service_name: pg-back
+    port_host: 8888
+    port_container: 4000
+    db_port_host: 3307
+    db_port_container: 5432
+    network_name: java-app_net
+  dockerfile:
+  - TARGET_JAR_FILE: test.jar

@@ -1,0 +1,8 @@
+---
+  services:
+  - service_name: python-script
+    image_name: python-script
+    container_name: python-script
+    network_name: python-net
+    port_host: 8456
+    port_container: 3000
