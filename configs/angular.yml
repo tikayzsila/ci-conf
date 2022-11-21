@@ -1,8 +1,0 @@
----
-  services:
-  - service_name: angular-app
-    image_name: angular-app
-    container_name: angular-app
-    port_host: 8888
-    port_container: 8080
-    network_name: angular-app_net

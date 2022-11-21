@@ -1,0 +1,24 @@
+---
+  services:
+  - service_name: universal-app
+    image_name: universal-app
+    container_name: universal-app
+    port_host: 8888
+    port_container: 4000
+    network_name: universal-app_net
+
+  dockerfile:
+  - angular_project_name: universal-app
+
+  gitlab-ci:
+  - project_name: testFrontApp
+    branch: ci/test
+    gitlab_project: ivanov_vs/ci-templates
+    template_filename: template.gitlab-ci.yml
+    lang: angular-ssr
+
+  ansible:
+  - staging_ip: 192.168.1.1
+    prod_ip: 127.0.0.1
+    ansible_user: support
+    project_folder: new-ui

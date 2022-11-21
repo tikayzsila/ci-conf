@@ -1,0 +1,21 @@
+---
+  services:
+  - service_name: next-app
+    image_name: next-app
+    container_name: next-app
+    port_host: 8456
+    port_container: 3000
+    network_name: next-app_net
+
+  gitlab-ci:
+  - project_name: testFrontApp
+    branch: ci/test
+    gitlab_project: ivanov_vs/ci-templates
+    template_filename: template.gitlab-ci.yml
+    lang: nextjs
+
+  ansible:
+  - staging_ip: 192.168.1.1
+    prod_ip: 127.0.0.1
+    ansible_user: support
+    project_folder: new-ui

@@ -1,0 +1,21 @@
+---
+  services:
+  - service_name: python-script
+    image_name: python-script
+    container_name: python-script
+    network_name: python-net
+    port_host: 8456
+    port_container: 3000
+
+  gitlab-ci:
+  - project_name: testApp
+    branch: ci/test
+    gitlab_project: ivanov_vs/ci-templates
+    template_filename: template.gitlab-ci.yml
+    lang: python
+
+  ansible:
+  - staging_ip: 192.168.1.1
+    prod_ip: 127.0.0.1
+    ansible_user: support
+    project_folder: new-ui

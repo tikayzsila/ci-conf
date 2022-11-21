@@ -1,0 +1,27 @@
+---
+  services:
+  - service_name: java-app
+    image_name: java-app
+    container_name: java-app
+    pg_service_name: pg-back
+    port_host: 8888
+    port_container: 4000
+    db_port_host: 3307
+    db_port_container: 5432
+    network_name: java-app_net
+
+  dockerfile:
+  - TARGET_JAR_FILE: test.jar
+
+  gitlab-ci:
+  - project_name: testFrontApp
+    branch: ci/test
+    gitlab_project: ivanov_vs/ci-templates
+    template_filename: template.gitlab-ci.yml
+    lang: java
+    
+  ansible:
+  - staging_ip: 192.168.1.1
+    prod_ip: 127.0.0.1
+    ansible_user: support
+    project_folder: new-ui

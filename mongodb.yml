@@ -1,0 +1,7 @@
+---
+  services:
+  - service_name: mongo
+    port_host: 8888
+    mongo_express_port_host: 8081
+    redis_port_host: 6371
+    network_name: mongo_net
