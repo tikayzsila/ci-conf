@@ -22,3 +22,17 @@
     prod_ip: 127.0.0.1
     ansible_user: support
     project_folder: new-ui
+
+  server_conf:
+  - ansible_user: support
+    ansible_password: password
+    PROJECT: test
+    encr_password_prod: test
+    encr_password_stage: test
+  
+  runners_register:
+  - TOKEN: TOKEN_HERE
+    runner_tag_build_stage: testBuildStage
+    runner_tag_build_prod: testBuildProd
+    runner_tag_depl_stage: testDeployStage
+    runner_tag_depl_prod: testDeplyProd
